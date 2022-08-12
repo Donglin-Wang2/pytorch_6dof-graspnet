@@ -133,6 +133,7 @@ def main(args):
     estimator = grasp_estimator.GraspEstimator(grasp_sampler_args,
                                                grasp_evaluator_args, args)
     if args.train_data:
+        print("I AM IN THE TRAIN BLOCK")
         grasp_sampler_args.dataset_root_folder = args.dataset_root_folder
         grasp_sampler_args.num_grasps_per_object = 1
         grasp_sampler_args.num_objects_per_batch = 1
@@ -147,6 +148,7 @@ def main(args):
             print('close the window to continue to next object . . .')
             mlab.show()
     else:
+        print("I AM IN THE TEST BLOCK")
         for npy_file in glob.glob(os.path.join(args.npy_folder, '*.npy')):
             # Depending on your numpy version you may need to change allow_pickle
             # from True to False.

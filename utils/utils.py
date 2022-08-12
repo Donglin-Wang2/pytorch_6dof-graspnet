@@ -563,7 +563,7 @@ def qeuler(q, order, epsilon=0):
 
 
 def read_checkpoint_args(folder_path):
-    return edict(yaml.load(open(os.path.join(folder_path, 'opt.yaml'))))
+    return edict(yaml.full_load(open(os.path.join(folder_path, 'opt.yaml'))))
 
 
 def choose_grasps_better_than_threshold(eulers,
